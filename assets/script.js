@@ -23,7 +23,8 @@ const trackMouce = (() => {
         else
             return 0
     };
-    const follow = (evt) => {
+
+    document.onmousemove = (evt) => {
         if (first) {
             first = !1;
             pointer.style.opacity = '1';
@@ -34,8 +35,6 @@ const trackMouce = (() => {
             ease: Power3.easeOut
         });
     };
-
-    document.onmousemove = follow;
     const links = document.getElementsByTagName('a');
 
     Array.from(links).forEach(link => {
@@ -69,4 +68,17 @@ const backgroundText = (() => {
             ease: Power3.easeOut
         });
     };
+})();
+
+const contactUsButton = (() => {
+    const target = document.getElementsByClassName('contact-us-button')[0];
+    const footer = document.getElementsByClassName('footer')[0];
+
+    if (target && footer) {
+        target.addEventListener('click', () => {
+            const isTop = document.documentElement.scrollTop < footer.offsetHeight;
+
+            window.scroll({top: isTop ? footer.offsetHeight : 0, left: 0, behavior: 'smooth' });
+        });
+    }
 })();
