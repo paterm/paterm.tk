@@ -1,2 +1,2 @@
-# paterm.tk
-[Paterm Studio](http://paterm.tk)
+# Paterm Studio
+[paterm.tk](http://paterm.tk)
